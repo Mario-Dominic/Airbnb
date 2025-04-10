@@ -39,3 +39,5 @@ end
 group :development do
   gem "web-console"
 end
+
+gem "tailwindcss-ruby", "~> 4.1"
