@@ -1,46 +1,69 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-
-   <div class="mb-4">
-    <%= f.input :email, required: true, autofocus: true, input_html: { class: "block border-gray-300 p-2 rounded" } %>
-   </div>
-
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
-
-    <div class="mb-4">
-      <%= f.input :password,
-                  hint: "leave it blank if you don't want to change it",
-                  required: false,
-                  input_html: { autocomplete: "new-password", class: "block border-gray-300 p-2 rounded"  } %>
-    </div>
-
-    <div class="mb-4">
-      <%= f.input :password_confirmation,
-                  required: false,
-                  input_html: { autocomplete: "new-password", class: "block border-gray-300 p-2 rounded"  } %>
-    </div>
-
-    <div class="mb-4">
-      <%= f.input :current_password,
-                  hint: "we need your current password to confirm your changes",
-                  required: true,
-                  input_html: { autocomplete: "current-password", class: "block border-gray-300 p-2 rounded"  } %>
-    </div>
+<div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
+  <div class="sm:mx-auto sm:w-full sm:max-w-md">
+    <h2 class="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Edit <%= resource_name.to_s.humanize %></h2>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+  <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">
+    <div class="bg-white px-6 py-12 shadow sm:rounded-lg sm:px-12">
+     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "space-y-6" }) do |f| %>
+      <%= f.error_notification %>
+
+        <div>
+          <%= f.input :email,
+                       required: true,
+                       autofocus: true,
+                       input_html: { autocomplete: "email", class:" mt-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" },
+                       label_html: { class: "block text-sm font-medium leading-6 text-gray-900" }%>
+        </div>
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <% end %>
+
+        <div>
+          <%= f.input :password,
+                      required: false,
+                      hint: "leave it blank if you don't want to change it",
+                      hint_html: {
+                        class: "text-sm text-gray-500 mt-1"
+                        },
+                      input_html: { autocomplete: "new-password", class:"mt-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" },
+                      label_html: { class: "block text-sm font-medium leading-6 text-gray-900" } %>
+        </div>
+
+
+        <div>
+          <%= f.input :password_confirmation,
+                      required: false,
+                      input_html: { autocomplete: "new-password", class:"mt-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"  },
+                      label_html: { class: "block text-sm font-medium leading-6 text-gray-900" }  %>
+        </div>
+
+        <div class="mb-4">
+          <%= f.input :current_password,
+                      hint: "we need your current password to confirm your changes",
+                      hint_html: {
+                        class: "text-sm text-gray-500 mt-1"
+                        },
+                      required: true,
+                      input_html: { autocomplete: "current-password", class:"mt-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6",
+                      label_html: { class: "block text-sm font-medium leading-6 text-gray-900" } } %>
+        </div>
+
+
+        <div>
+          <%= f.button :submit, "Update", class:"flex w-full justify-center rounded-md bg-red-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"  %>
+        </div>
+
+        <div>
+         <%= link_to "Cancel my account", registration_path(resource_name), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"  } %>
+        </div>
+
+        <%= link_to "Back", :back %>
+
+
+     <% end %>
+    </div>
+
   </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
-
-<%= link_to "Back", :back %>
+</div>
