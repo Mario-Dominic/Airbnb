@@ -39,7 +39,7 @@ user = User.create!(
       location_rating: (1..5).to_a.sample,
       value_rating: (1..5).to_a.sample,
       property: property,
-      user: user,
+      user: user
     )
   end
 end
