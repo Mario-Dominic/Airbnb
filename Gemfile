@@ -12,9 +12,9 @@ gem "font-awesome-sass", "~> 6.1"
 gem "image_processing", ">= 1.2"
 gem "importmap-rails"
 gem "jbuilder"
-gem 'money-rails', '~> 1.12'
+gem 'money-rails', '~> 1.15'
 gem "pg", "~> 1.1"
-gem "puma", "~> 5.0"
+gem 'puma', '~> 6.0'
 gem "rails", "~> 7.1.5", ">= 7.1.5.1"
 gem "redis", "~> 4.0"
 gem "sprockets-rails"
