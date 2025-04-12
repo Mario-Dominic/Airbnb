@@ -31,6 +31,7 @@
                 class="block h-6 w-6 stroke-white stroke-2 fill-none"
                 style="overflow: visible;"
                 data-controller="whishlist"
+                data-user-logged-in="<%= user_signed_in? %>"
                 data-action="click->whishlist#updatewhishliststatus"
                 data-status="false"
                 >
