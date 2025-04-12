@@ -12,7 +12,7 @@
           <%= f.input :email,
                        required: true,
                        autofocus: true,
-                       input_html: { autocomplete: "email", class:" mt-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" },
+                       input_html: { autocomplete: "email", class:" mt-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-300 sm:text-sm sm:leading-6" },
                        label_html: { class: "block text-sm font-medium leading-6 text-gray-900" }%>
         </div>
 
@@ -27,7 +27,7 @@
                       hint_html: {
                         class: "text-sm text-gray-500 mt-1"
                         },
-                      input_html: { autocomplete: "new-password", class:"mt-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" },
+                      input_html: { autocomplete: "new-password", class:"mt-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-300 sm:text-sm sm:leading-6" },
                       label_html: { class: "block text-sm font-medium leading-6 text-gray-900" } %>
         </div>
 
@@ -35,7 +35,7 @@
         <div>
           <%= f.input :password_confirmation,
                       required: false,
-                      input_html: { autocomplete: "new-password", class:"mt-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"  },
+                      input_html: { autocomplete: "new-password", class:"mt-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-300 sm:text-sm sm:leading-6"  },
                       label_html: { class: "block text-sm font-medium leading-6 text-gray-900" }  %>
         </div>
 
@@ -46,13 +46,13 @@
                         class: "text-sm text-gray-500 mt-1"
                         },
                       required: true,
-                      input_html: { autocomplete: "current-password", class:"mt-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6",
+                      input_html: { autocomplete: "current-password", class:"mt-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-300 sm:text-sm sm:leading-6",
                       label_html: { class: "block text-sm font-medium leading-6 text-gray-900" } } %>
         </div>
 
 
         <div>
-          <%= f.button :submit, "Update", class:"flex w-full justify-center rounded-md bg-red-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"  %>
+          <%= f.button :submit, "Update", class:"flex w-full justify-center rounded-md bg-red-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-300"  %>
         </div>
 
         <div>
