@@ -11,4 +11,8 @@ class Property < ApplicationRecord
 
   monetize :price_cents, allow_nil: true
 
+  def update_average_rating
+    average_rating = reviews.average(:final_rating)
+    update_column(:average_final_rating, average_rating)
+  end
 end
