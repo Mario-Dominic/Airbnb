@@ -6,6 +6,8 @@ class Property < ApplicationRecord
   validates :city, presence: true
   validates :state, presence: true
   validates :country, presence: true
+  has_many_attached :images
+  has_many :reviews, dependent: :destroy
 
   monetize :price_cents, allow_nil: true
 

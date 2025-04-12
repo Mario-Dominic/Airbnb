@@ -4,9 +4,24 @@
 
       <% @properties.each do |property| %>
         <div class="group relative">
-          <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-            <img src="https://ispydiy.com/wp-content/uploads/2019/12/Ispydiyabode4.jpg" alt="Front of men&#039;s Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+
+          <!-- Slider main container -->
+          <div class="swiper aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none lg:h-[260px]">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <% property.images.each do |image| %>
+                <div class="swiper-slide">
+                  <%= image_tag image, class:"h-full w-full object-cover object-center lg:h-full lg:w-full" %>
+                </div>
+              <% end %>
+            </div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
           </div>
+
           <div class="mt-2">
             <div>
               <div class="flex justify-between">
